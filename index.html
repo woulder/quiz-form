@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<button class="quiz-form__show-btn" id="quiz-form-show" type="button" onclick="showQuizForm()">Подберите недижимость</button>
+
+<div class="quiz-form-container" id="quiz-form-container">
+  <div class="quiz-form-container__close-btn" id="quiz-form-close">
+    <svg class="" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd"> <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect> <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect> </g> </svg>
+  </div>
+  <form id="quiz-form" class="quiz-form">
+    <div class="quiz-form__form-header">
+      <div class="quiz-form__form-header__description">
+        <h4>
+          <span class="icon-docs"></span>
+          Ответьте на вопросы и наш эксперт подберет для вас подходящие объекты
+        </h4>
+        <span class="quiz-form__form-header__current-page-number" id='page-number'>1/7</span>
+      </div>
+    <progress class="quiz-form__progress-bar" id="progress-bar" max="70" value="0"></progress>
+    </div>
+    <div class="quiz-form__main-content active">
+    <h1 class="quiz-form__main-content__current-question">С какой целью планируете покупку недвижимости в Одессе ?</h1>
+    <div class="quiz-form__main-content__answers">
+      <div class="form-group">
+        <input class="custom-radio" type="radio" id="purchase-purpose1" name="purchase-purpose" value="living" >
+        <label for="purchase-purpose1">
+          <span class="checkmark"></span> Для жизни
+        </label>
+      </div>
+      <div class="form-group">
+        <input class="custom-radio" type="radio" id="purchase-purpose2" name="purchase-purpose" value="investments" >
+        <label for="purchase-purpose2">
+          <span class="checkmark"></span> Для инвестиций
+        </label>
+      </div>
+
+      <div id="radio-group-purpose" class="validation-error"></div>
+    </div>
+  </div>
+    <div class="quiz-form__main-content">
+      <h1 class="quiz-form__main-content__current-question">Какой район Вас интересует ?</h1>
+      <div class="quiz-form__main-content__answers">
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-area1" name="purchase-area" value="Primorskyi" >
+          <label for="purchase-area1">
+            <span class="checkmark"></span> Приморский
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-area2" name="purchase-area" value="Kievskyi" >
+          <label for="purchase-area2">
+            <span class="checkmark"></span> Киевский
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-area3" name="purchase-area" value="Malinovskyi" >
+          <label for="purchase-area3">
+            <span class="checkmark"></span> Малиновский
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-area4" name="purchase-area" value="Suvorovskyi" >
+          <label for="purchase-area4">
+            <span class="checkmark"></span> Суворовский
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="quiz-form__main-content">
+      <h1 class="quiz-form__main-content__current-question">Выберите необходимую площадь</h1>
+      <div class="quiz-form__main-content__answers">
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-size1" name="apartment-size" value="under-40" >
+          <label for="purchase-size1">
+            <span class="checkmark"></span> смарт квартира или студия до 40 метров
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="apartment-size2" name="apartment-size" value="40-60" >
+          <label for="apartment-size2">
+            <span class="checkmark"></span> однокомнатная 40-60 метров
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="apartment-size3" name="apartment-size" value="60-80" >
+          <label for="apartment-size3">
+            <span class="checkmark"></span> двухкомнатная 60-80 метров
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="apartment-size4" name="apartment-size" value="80-120" >
+          <label for="apartment-size4">
+            <span class="checkmark"></span> трехкомнатная 80-120 метров
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="apartment-size5" name="apartment-size" value="120-160" >
+          <label for="apartment-size5">
+            <span class="checkmark"></span> четырехкомнатная 120-160 метров
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="apartment-size6" name="apartment-size" value="over-150" >
+          <label for="apartment-size6">
+            <span class="checkmark"></span> большая квартира или пентхаус свыше 150 метров
+          </label>
+        </div>
+
+      </div>
+    </div>
+    <div class="quiz-form__main-content">
+      <h1 class="quiz-form__main-content__current-question">Укажите рамки предполагаемого бюджета</h1>
+      <div class="quiz-form__main-content__answers">
+        <label for="budget-amount">
+          <input id="budget-amount" name="budget-amount" class="quiz-form__main-content__text-field" type="text" >
+        </label>
+      </div>
+    </div>
+    <div class="quiz-form__main-content">
+      <h1 class="quiz-form__main-content__current-question">Выберите срок сдачи</h1>
+      <div class="quiz-form__main-content__answers">
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="building-deadline1" name="building-deadline" value="built-leased" >
+          <label for="building-deadline1">
+            <span class="checkmark"></span> Построен и сдан
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="building-deadline2" name="building-deadline" value="lease-this-year" >
+          <label for="building-deadline2">
+            <span class="checkmark"></span> Сдается в этом году
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="building-deadline3" name="building-deadline" value="lease-next-year" >
+          <label for="building-deadline3">
+            <span class="checkmark"></span> Сдача в следующем году
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="building-deadline4" name="building-deadline" value="lease-in-2-3-years" >
+          <label for="building-deadline4">
+            <span class="checkmark"></span> Сдача в течение 2-3 лет
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="quiz-form__main-content">
+      <h1 class="quiz-form__main-content__current-question">Рассматриваете покупку в рассрочку ?</h1>
+      <div class="quiz-form__main-content__answers">
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="credit-purchase1" name="credit-purchase" value="yes" >
+          <label for="credit-purchase1">
+            <span class="checkmark"></span> Да
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="credit-purchase2" name="credit-purchase" value="no" >
+          <label for="credit-purchase2">
+            <span class="checkmark"></span> Нет
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="quiz-form__main-content">
+      <h1 class="quiz-form__main-content__current-question">Какие приблизительные сроки покупки ?</h1>
+      <p class="quiz-form__main-content__description">
+      Акции строительных компаний завязаны на конкретные даты, поэтому укажите приблизительные сроки покупки для грамотного подбора вариантов
+      </p>
+      <div class="quiz-form__main-content__answers">
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-deadlines1" name="purchase-deadlines" value="urgently" >
+          <label for="purchase-deadlines1">
+            <span class="checkmark"></span> Срочно
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-deadlines2" name="purchase-deadlines" value="after-selling-own-property" >
+          <label for="purchase-deadlines2">
+            <span class="checkmark"></span> После продажи своей недвижимости
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-deadlines3" name="purchase-deadlines" value="within-3-months" >
+          <label for="purchase-deadlines3">
+            <span class="checkmark"></span> В течение 3 месяцев
+          </label>
+        </div>
+        <div class="form-group">
+          <input class="custom-radio" type="radio" id="purchase-deadlines4" name="purchase-deadlines" value="within-year" >
+          <label for="purchase-deadlines4">
+            <span class="checkmark"></span> В течение года
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="quiz-form__main-content">
+      <div class="quiz-form__main-content__answers">
+        <div class="quiz-form__main-content__answers__inner-wrapper">
+          <label class="quiz-form__main-content__label_big" for="quiz-form-name">Ваше имя</label>
+          <input id="quiz-form-name" type="text" name="name" class="quiz-form__main-content__text-field" required>
+        </div>
+        <div class="quiz-form__main-content__answers__inner-wrapper">
+          <label class="quiz-form__main-content__label_big" for="quiz-form-tel">Контактный телефон</label>
+          <input id="quiz-form-tel" type="tel" name="tel" class="quiz-form__main-content__text-field" required>
+        </div>
+      </div>
+    </div>  
+
+    <div class="quiz-form__control-buttons">
+      <button class="quiz-form__control-buttons__prev-button" id="form-button-prev" type="button">Назад</button>
+      <button class="quiz-form__control-buttons__next-button" id="form-button-next" type="button">Следующий вопрос</button>
+    </div>
+  </form>
+
+</div>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
